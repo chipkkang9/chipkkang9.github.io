@@ -1,8 +1,8 @@
 # site settings
 
-title: cvless
-description: Jekyll theme for a beautiful online CV
-taglong: Jekyll theme for a beautiful online CV
+title: chipkkang9's Security Lab.
+description: This is Cyber Security Lab. of chipkkang9.
+taglong: This is Cyber Security Lab. of chipkkang9.
 tagshort: Jekyll theme
 url: https://cvless.netlify.app
 baseurl: ""
@@ -14,7 +14,7 @@ repo: https://github.com/username/username.github.io
 author:
   name: Place Holder
   email: username@domain.com
-photo: /assets/photo.jpg
+photo: /assets/안유진.jpg
 
 # build settings
 
