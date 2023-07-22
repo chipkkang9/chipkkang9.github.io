@@ -1,8 +1,8 @@
 # site settings
 
-title: chipkkang9's Security Lab.
-description: This is Cyber Security Lab. of chipkkang9.
-taglong: This is Cyber Security Lab. of chipkkang9.
+title: C2SR Lab.
+description: Chipkkang9's Cyber Security Research Lab.
+taglong: Chipkkang9's Cyber Security Research Lab.
 tagshort: Jekyll theme
 url: https://cvless.netlify.app
 baseurl: ""
