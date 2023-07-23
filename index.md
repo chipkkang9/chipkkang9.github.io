@@ -5,40 +5,44 @@ title: Home
 
 # About Me
 
-##학창 시절
+## in Adolescence
 
-시흥신일초등학교 입학 (2009 ~ 2011)
+Siheung Sin-il Elementary School (2009 ~ 2011)
 
-인천신대초등학교 졸업 (2011 ~ 2015)
+Incheon Sin-dae Elementary School - Graduated (2011 ~ 2015)
 
-인천계수중학교 졸업 (2015 ~ 2018)
+Incheon Gye-sue Middle School - Graduated (2015 ~ 2018)
 
-인천계양고등학교 졸업 (2018 ~ 2021)
+Incheon Gyeyand High School - Graduated (2018 ~ 2021)
+
+
+## in Adult
+ 
+
+### at Ajou University
+
+Dept. of Cyber Security 21th (2021 ~ )
+
+Information-Communication College Student Council, Member of Affair Dept. (2021)
+
+IC & SW Colledge Student Council, Member of Education & Welfare Dept. (2022)
+
+Software & Infomatics Colledge Student Council, Conductor of Education & Policy Dept. (2023)
+
+Dept. of Cyber Security, Member of Whois - Cyber Seucrity Student club (2021 ~ )
+
+Dept. of Cyber Security, Secretary of Whois (2022)
+
+Dept. of Cyber Security, Vice-Chairman of Whois (2023)
+
+Information Security Application & Assurance, ISAA (Lab. of Professor Jin Kwak) - Undergraduate Research Student (2022 ~ )
 
  
 
-##대학교 활동
+### Extracurricular Activities
 
-아주대학교 사이버보안학과 21학번 (2021 ~ )
+KITRI Best of the Best 11th - Information Security Consulting (2022)
 
-아주대학교 정보통신대학 학생회 사무국 국원 (2021)
-
-아주대학교 정보통신대학&소프트웨어융합대학 학생회 교육복지국 국원 (2022)
-
-아주대학교 사이버보안학과 정보보안소학회 Whois 소속 (2021 ~ )
-
-아주대학교 사이버보안학과 정보보안소학회 Whois 총무 (2022)
-
-아주대학교 정보보호응용및보증연구실 ISAA(곽 진 교수님 연구실) 소속 학부 연구생 (2022 ~ )
-
-아주대학교 사이버보안학과 정보보안소학회 Whois 부회장(2023)
-
- 
-
-##대외 활동
-
-차세대 보안리더 양성 프로그램 Best of the Best 보안 컨설팅 트랙 11기 (2022)
-
-HSpace 운영팀 3기 - 프로그램 운영 부서 (2023)
+HSpace Operation Team 3th - Dept. of Program Operation (2023)
 
 {% include archive.html %}
