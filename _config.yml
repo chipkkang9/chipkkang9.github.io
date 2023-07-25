@@ -4,7 +4,7 @@ title: C2SR Lab.
 description: Chipkkang9's Cyber Security Research Lab.
 taglong: Chipkkang9's Cyber Security Research Lab.
 tagshort: Jekyll theme
-url: https://cvless.netlify.app
+url: https://chipkkang9.github.com/
 baseurl: ""
 permalink: pretty
 repo: https://github.com/username/username.github.io
@@ -12,8 +12,8 @@ repo: https://github.com/username/username.github.io
 # author settings
 
 author:
-  name: Place Holder
-  email: username@domain.com
+  name: chipkkang9
+  email: chipkkang9@gmail.com
 photo: /assets/logo2.png
 
 # build settings
@@ -40,7 +40,7 @@ feed:
   path: atom.xml
 
 autopages:
-  enabled: false
+  enabled: true
 
 pagination:
   enabled: true
