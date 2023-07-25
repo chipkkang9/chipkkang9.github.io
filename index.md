@@ -15,7 +15,7 @@ Incheon Gye-sue Middle School - Graduated (2015 ~ 2018)
 
 Incheon Gyeyand High School - Graduated (2018 ~ 2021)
 
-<br/><br/<
+<br/>
 ## in Adult
  
 <br/>
