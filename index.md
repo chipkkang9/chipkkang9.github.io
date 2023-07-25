@@ -15,10 +15,10 @@ Incheon Gye-sue Middle School - Graduated (2015 ~ 2018)
 
 Incheon Gyeyand High School - Graduated (2018 ~ 2021)
 
-
+<br/><br/<
 ## in Adult
  
-
+<br/>
 ### at Ajou University
 
 Dept. of Cyber Security 21th (2021 ~ )
@@ -38,7 +38,7 @@ Dept. of Cyber Security, Vice-Chairman of Whois (2023)
 Information Security Application & Assurance, ISAA (Lab. of Professor Jin Kwak) - Undergraduate Research Student (2022 ~ )
 
  
-
+<br/>
 ### Extracurricular Activities
 
 KITRI Best of the Best 11th - Information Security Consulting (2022)
