@@ -19,6 +19,15 @@
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/collection/posts/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/collection/posts/2/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/collection/posts/3/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/cv.pdf</loc>
 <lastmod>2023-07-25T15:36:49+09:00</lastmod>
 </url>
