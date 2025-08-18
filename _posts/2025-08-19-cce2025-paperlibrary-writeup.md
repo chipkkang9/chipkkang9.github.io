@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [CCE 2025 PaperLibrary write-up]
+title: '[CCE 2025] PaperLibrary write-up'
 date: 2025-08-19 06:47:01 +09:00
 categories: [CTF]
 tags: [CTF, AI, Write-up]
