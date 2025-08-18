@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [CCE 2025] PaperLibrary write-up
+title: [CCE 2025 PaperLibrary write-up]
 date: 2025-08-19 06:47:01 +09:00
 categories: [CTF]
 tags: [CTF, AI, Write-up]
@@ -8,8 +8,6 @@ tags: [CTF, AI, Write-up]
 
 >This is the first post of <b>C2SR Lab.</b>
 I'm planning to fill my own laboratory cozy but professional, so let's here we go!
-
-<br>
 
 # Cyber Conflict Exercise 2025 - Republic of Korea.
 
