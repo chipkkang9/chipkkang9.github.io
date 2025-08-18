@@ -17,13 +17,9 @@ Administrator says, “Gather the information about admin! If login correctly, y
 
 Of course, It depends on the characteristic problem-by-problem, but this one combines TWO kinds of attack techniques below:
 
- <b>
+- <b>Prompt Injection</b>
 
-- Prompt Injection
-
-- SQL Injection
-
-</b>
+- <b>SQL Injection</b>
 
 When I study about Machine-Leanring or AI, I thought if I were a CTF administrator, the challenge would be like System Hacking for model exploit or Web Hacking for AI-based web service.
 
