@@ -6,7 +6,7 @@ categories: [CTF]
 tags: [CTF, AI, Write-up]
 ---
 
->This is the first post of <b>C2SR Lab.</b>
+> This is the first post of <b>C2SR Lab.</b>
 I'm planning to fill my own laboratory cozy but professional, so let's here we go!
 
 # Cyber Conflict Exercise 2025 - Republic of Korea.
