@@ -15,7 +15,7 @@ It consists of Encoder and Decoder, known as its very first paper "Attention Is 
 In this article, we'll gonna discuss the pros and cons of each Transformer-based model and the tasks each model fits. Let's look into these several Transformer Architectures.
 
 ## Encoder-Only Transformer
-![](/assets/img/posts/Encoder-only%20Transformer.png)
+![](/assets/img/posts/Encoder-only%20Transformer.png){: width="589" height="972" }
 _Encoder Part of Transformer_
 
 Encoder-Only Transformer is also known as "auto-encoding" model. 
@@ -37,7 +37,7 @@ Encoder model fits for the tasks that require understand about whole sentence, l
 <br>
 
 ## Decoder-Only Transformer
-![](/assets/img/posts/Decoder-only%20Transformer.png)
+![](/assets/img/posts/Decoder-only%20Transformer.png){: width="589" height="972" }
 _Decoder Part of Transformer_
 
 Decoder-Only Transformer is also known as "auto-regressive" model.
@@ -59,7 +59,7 @@ Decoder model fits for the tasks like text generation, summarization, translatio
 <br>
 
 ## Encoder-Decoder Transformer
-![](/assets/img/posts/Transformer%20Architecture.png)
+![](/assets/img/posts/Transformer%20Architecture.png){: width="589" height="972" }
 _Encoder-Decoder Transformer_
 
 Encoder-Decoder Transformer is also known as "sequence-to-sequence" model. It might be named the architecture is similar to seq2seq model.
@@ -85,4 +85,4 @@ For example, `T5` model pretrains by replacing random spans of text to a mask sp
 
 ## References.
 > Huggingface. Transformer Architectures
-: https://huggingface.co/learn/llm-course/en/chapter1/6
+: <https://huggingface.co/learn/llm-course/en/chapter1/6>
