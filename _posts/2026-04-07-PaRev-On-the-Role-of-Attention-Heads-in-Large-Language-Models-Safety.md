@@ -156,7 +156,6 @@ h^{mod}_i &= \text{Softmax}\left(\frac{\epsilon W^i_q W^{iT}_k}{\sqrt{d_k/n}}\ri
 \end{align}
 $$
 $$
-\begin{aligned}
 \text{where} \;\; A = [a_{ij}] \;\;\; a_{ij} =
 \begin{cases}
 \frac{1}{i} & \text{if } i \ge j \\
