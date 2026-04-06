@@ -2,6 +2,7 @@
 layout: post
 title: '[PaRev] On the Role of Attention Heads in Large Language Models Safety'
 date: 2026-04-07 00:00:00 +09:00
+math: true
 categories: [Paper Review]
 tags: [AI, Safety, Attention, LLM, Interpretation]
 ---
