@@ -20,7 +20,7 @@ tags: [AI, Safety, Attention, LLM, Interpretation]
 
 # 1. Introduction
 ![](/assets/img/posts/Ships_Sahara/1_figure.png){: width=650}
-_그림 1 On the Role of Attention Heads in Large Language Models Safety_
+_그림 1) On the Role of Attention Heads in Large Language Models Safety_
 
 
 오늘날 LLM의 성능은 지속적으로 향상되고 있다. 하지만, LLM을 통한 보안 문제도 대두되고 있는데, 특히 언어 모델은 유해한 요청(harmful query)에 대해 안전하지 않고, 독성이 있는(toxic) 응답을 생성한다.
@@ -157,14 +157,11 @@ h^{mod}_i &= \text{Softmax}\left(\frac{\epsilon W^i_q W^{iT}_k}{\sqrt{d_k/n}}\ri
 $$
 $$
 \begin{aligned}
-\text{where} \quad
-A &= [a_{ij}] \\
-a_{ij} &=
+\text{where} \;\; A = [a_{ij}] \;\;\; a_{ij} =
 \begin{cases}
 \frac{1}{i} & \text{if } i \ge j \\
 0 & \text{if } i < j
 \end{cases}
-\end{aligned}
 $$
 
 Undifferentiated Attention 과정은 주의를 기울여 볼 부분을 없애는, 즉, 우선 **모든 attention head들을 normalize하는 과정**이다.
