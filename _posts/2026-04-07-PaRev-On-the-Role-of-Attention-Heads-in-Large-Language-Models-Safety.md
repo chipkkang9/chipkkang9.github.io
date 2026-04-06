@@ -155,6 +155,7 @@ $$
 h^{mod}_i &= \text{Softmax}\left(\frac{\epsilon W^i_q W^{iT}_k}{\sqrt{d_k/n}}\right) W^i_v = A W^i_v, 
 \end{align}
 $$
+
 $$
 \text{where} \;\; A = [a_{ij}] \;\;\; a_{ij} =
 \begin{cases}
