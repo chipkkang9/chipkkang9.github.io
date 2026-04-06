@@ -1,6 +1,7 @@
 ---
 layout: post
 title: '[CCE 2025] PaperLibrary write-up'
+description: The very first posting of C2SR Lab blog!!
 date: 2025-08-19 06:47:01 +09:00
 categories: [CTF]
 tags: [CTF, AI, Write-up]
