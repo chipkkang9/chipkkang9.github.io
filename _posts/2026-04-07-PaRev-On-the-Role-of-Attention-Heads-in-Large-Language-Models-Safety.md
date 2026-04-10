@@ -115,8 +115,8 @@ Safety Parameter란, 이들이 수정되면 LLM의 Safety 관련 가드레일이
 
 $$
 \begin{align}
-\Theta_{S,K} &= \text{Top-K}\{\theta_s : \arg\max_{\theta \in \Theta} \Delta p(\theta)\}, \\[6pt]
-\Delta p(\theta) &= \mathbb{D}_{\mathrm{KL}}\big( p(R_L \mid x_H; \theta_0) \;\|\; p(R_L \mid x_H; (\theta_0 \setminus \theta)) \big)
+\Theta_{\mathcal{S}, K} &= \text{Top-K} \big\{ \theta_\mathcal{S} : \argmax_{\theta_\mathcal{C} \in \theta_\mathcal{O}} \;\; \Delta p(\theta_\mathcal{C}) \big\}, \\
+\Delta p(\theta_\mathcal{C}) &= \mathbb{D}_\text{KL} \big( \; p (R_\perp \; | \; x_\mathcal{H} ; \theta_\mathcal{O} ) \; \| \; p ( R_\perp \; | \; x_\mathcal{H} ; (\theta_\mathcal{O} \backslash \theta_\mathcal{C})) \big)
 \end{align}
 $$
 
@@ -129,7 +129,7 @@ $$
 ---
 
 # 3. Safety Head ImPortant Score (Ships)
-> **<span style='color: #6a5acd'>GOAL1: "특정 harmful query에 대한 Multi-head Attention 내부의 safety parameter를 식별"</span>**
+> **<span style='color: #6a5acd'>Ships: "특정 harmful query에 대한 Multi-head Attention 내부의 safety parameter를 식별"</span>**
 
 Ships는 특정 attention head를 제거하여 해당 head의 safety capabilitiy를 측정하고, harmful query에 대한 출력 분포의 변화(KL divergence)를 기반으로 safety에 중요한 attention head를 식별한다.
 
@@ -180,7 +180,7 @@ $$
 
 그 결과 attention score는 0과 가까운, 입력에 관계없이 거의 동일한 분포로 수렴한다.
 
-그리고 그 동일한 분포는 수식 (8)에서 언급한 special matrix $A$를 의미하는데, 위와 같은 하삼각 행렬(lower triangle matrix)이다.
+그리고 그 동일한 분포는 **수식 (8)**에서 언급한 special matrix $A$를 의미하는데, 위와 같은 하삼각 행렬(lower triangle matrix)이다.
 
 이 단계를 통해 $Q$, $K$값, 즉, **<span style='color: #6a5acd'>어떤 정보를 선택하여 전달할 지에 대한 지표를  0으로 수렴하게 하여 정보 구별 능력을 망가뜨린다.</span>**
 
@@ -207,6 +207,8 @@ h^{mod}_i = \text{Softmax} \left( \frac{W^i_vW^{iT}_k}{\sqrt{d_k / n}} \right) \
 $$
 
 즉, attention weigh는 그대로 유지되고 head의 최종 출력만 scaling 된다.
+
+이는 **<span style='color: #6a5acd'>attention head 자체를 masking 하는 기존 연구들과 비슷한 효과</span>**를 갖는다.
 
 ## 3.2 Evaluate the Importance of Parameters for Specific Harmful Query
 
@@ -246,7 +248,7 @@ $$
 실험은 3단계로 진행되는데,
 
 1. harmful query$(q_\mathcal{H})$에 대해서 `Ships`로 safety head를 선택한다.
-2. head ablation을 수행한다.
+2. head ablation(Undifferentiated Attention, Scaling Contribution)을 수행한다.
 3. 각 query마다 128개의 token을 생성한다.
 4. 그 결과로 safety 변화를 측정한다.
 
@@ -275,22 +277,30 @@ $$
 
 # 4. Safety Attention Head AttRibution Algorithm (Sahara)
 
-> **<span style='color: #6a5acd'>AIM 2: "`Ships`를 데이터셋 수준의 적용으로 확장하여, 다양한 query에 대해 일관되게 safety capability를 가지는 attention head를 식별한다."</span>**
+> **<span style='color: #6a5acd'>Sahara: "`Ships`를 데이터셋 수준의 적용으로 확장하여, 다양한 query에 대해 일관되게 safety capability를 가지는 attention head를 식별한다."</span>**
 
 `Sahara`는 `Ships`를 활용하여 safety 능력에 결정적인 attention head를 특정하는 접근법이다.
 
-## 4.1 Generalize the Impact of Safety Head Ablation
+![alt text](/assets/img/posts/Ships_Sahara/residual_stream.png)
 
-![alt text](/assets/img/posts/Ships_Sahara/3_figure.png){: width=200}
-_그림 3) 일반화된 `Ships` 표현_
+`Sahara`는 residual stream(잔차 흐름)이라는 transformer의 특성에 주목한다.
+
+Residual Stream이란, 특정 query가 transformer 내의 layer들을 모두 통과했을 때 각 attention을 통해 연산되는 정보들이 누적되어 저장된다는 것이다.
+
+본 논문에서는 최종 layer의 representation 값인 $x_{-1}$을 추출하여 활용한다.
+
+## 4.1 Generalize the Impact of Safety Head Ablation
 
 이번 Section에서는 전체 데이터셋 수준에서 Safety Head를 망가뜨렸을 때의 영향을 측정한다.
 
-이를 위해 $a$로 표현되는 **'residual stream activation'**에 대한 기존 연구를 참고하는데, 해당 activation가 safety 관련 feature를 포함함을 전제로 한다.
+이를 위해 $a$로 표현되는 **'residual stream activation'**에 대한 기존 연구를 참고한다.
 
 위와 같은 아이디어에 기반하여 특이값 분해 $($Singular Value Decomposition, $\text{SVD})$ 을 적용하여 safety-critical 한 feature들을 식별하는 것이 이번 Section의 목표이다.
 
 과정은 다음과 같다.
+
+![alt text](/assets/img/posts/Ships_Sahara/generalization_of_ships.png)
+_Safety Head를 제거하기 위해 M을 도출하는 과정_
 
 1. harmful query dataset $Q_\mathcal{H}$를 모델에 입력
 2. 각 query에 대한 top layer residual activation $a$ 수집
@@ -307,7 +317,7 @@ $$
 만약 입력 데이터셋이 harmful할 경우, $U$는 harmful query 전체에 공통적으로 나타나는 safety-related representation 구조를 나타내게 된다.
 
 Safety Capability를 가지는 attention head를 특정하기 위해서 두 가지 Matrix를 비교한다.
-- $U_\theta$: Aligned model에서의 representation ($U_\theta \in \mathbb{R}^{|Q_\mathcal{H}| \times d_k}$)
+- $U_\theta$: Aligned model에서의 representation $(U_\theta \in \mathbb{R}^{|Q_\mathcal{H}| \times d_k})$
 - $U_\mathcal{A}$: 특정 attention head를 ablation한 model에서의 representation
 
 Ablation의 영향력을 정량화하기 위해서, $U_\theta$와 $U_\mathcal{A}$ 사이의 principle angle을 계산한다.
@@ -321,6 +331,9 @@ $$
 $$
 
 이때 앞쪽 $r$개 차원은 SVD에서 가장 중요한 feature를 포함하고, 본 연구에서는 이에 주목한다.
+
+![alt text](/assets/img/posts/Ships_Sahara/3_figure.png){: width="200" }
+_그림 3) 일반화된 `Ships` 표현_
 
 $\sigma_r$은 $r$번째 특이값(singular value)를 의미하고, $\phi_r$은 $U_\theta^{(r)}$과 $U_\mathcal{A}^{(r)}$ 사이의 principle angle을 의미한다.
 
@@ -355,30 +368,34 @@ _Algorithm) Safety Attention Head AttRibution Algorithm (`Sahara`)_
 
 ## 4.3 How Does Safety Heads Affect Safety?
 
-### Ablating Heads Results in Safety Degradation.
-
 ![alt text](/assets/img/posts/Ships_Sahara/4_figure.png){: width = 650}
 _그림 4) head 제거와 model safety 사이의 상관관계 (`new token=128`, `k=5` for top-k sampling)_
 
+이번 Section에서는 Safety Head들이 모델의 Safety Capability에 어떻게 영향을 주는지 알아본다.
+
+### Ablating Heads Results in Safety Degradation.
+
+![alt text](/assets/img/posts/Ships_Sahara/4a_figure.png){: width="350"}
+_그림 4(a)) ASR에 영향을 주는 attention head 집합 크기_
+
 그림 4(a)는 두 가지 모델 모두에서 `Sahara`를 통해 **safety score가 높은 attention head를 제거했을 때, ASR이 확연히 증가**한 것을 확인할 수 있었다.
 
-그림 4(b)는 마찬가지로 두 모델에서 head를 개별적으로 제거했을 때 ASR 변화를 heatmap으로 표시한 그림이다.
+하지만, 그림에서도 알 수 있듯, ablate 하는 head의 개수가 3일 때까지만 ASR이 증가하는 것을 볼 수 있다.
+
+이후 연구에서 밝혀진 내용인데, attention head의 ablation을 과도하게 하면 model 자체의 능력이 망가져 ASR 평가 자체가 어려워진다고 한다.
+
+### Safety heads are Sparse.
+
+![alt text](/assets/img/posts/Ships_Sahara/4b_figure.png){: width="350"}
+_그림 4(b)) 소수의 attention head만 safety에 치명적_
+
+그림 4(b)는 두 benchmark를 대상으로 head를 개별적으로 제거했을 때 ASR 변화를 heatmap으로 표시한 그림이다.
 
 대부분의 head는 제거해도 ASR의 변화와 무관하지만, 특정 head를 제거했을 때는 ASR이 크게 증가한 것을 확인할 수 있다.
 
-이는 safety capability가 특정 attention head에 집중되어 있다는 본 연구의 주장을 뒷받침한다.
+이는 **아주 소수의 attention head만 safety 에 치명적**이며, 대부분은 safety에 대해 무시할 수 있는 수준의 영향을 준다는 것이다.
 
-### Impact of Head Group Size.
-
-위 그림 4(a)에서 보면, 일반적으로 ablate 하는 head의 개수가 3일 때까지 ASR가 증가하는 것을 볼 수 있다.
-
-이후 연구에서 밝혀진 내용인데, attention head의 ablation을 많이 하면 model의 출력이 망가져서 ASR 평가 자체가 어려워진다는 것이 드러났다.
-
-### Safety Heads are Sparse.
-
-그림 4(b)에서도 알 수 있듯, Safety attention head는 모델 전체에 고르게 퍼져있지 않다.
-
-이는 **아주 소수의 attention head가 safety 에 치명적**이며, 대부분은 safety에 대해 무시할 수 있는 수준의 영향을 준다는 것이다.
+이는 **<span style='color: #6a5acd'>safety capability가 특정 attention head에 집중되어 있다</span>**는 본 연구의 주장을 뒷받침한다.
 
 ### Our Method Localizes Safety Parameters at a Finer Granularity.
 
@@ -429,26 +446,17 @@ Section 3.1에서 LLM safety capability에 영향을 주는 Undifferentiated Att
 
 ### Safety Head Can Extracting Crucial Safety Information.
 
-| Method                     | Dataset            | 1     | 2     | 3     | 4     | 5     | Mean  |
-|:-------------------------:|:------------------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| Undifferentiated Attention | Malicious Instruct | +0.63 | +0.68 | +0.72 | +0.70 | +0.66 | +0.68 |
-| Undifferentiated Attention | Jailbreakbench     | +0.58 | +0.65 | +0.68 | +0.62 | +0.63 | +0.63 |
-| Scaling Contribution       | Malicious Instruct | +0.01 | +0.02 | +0.02 | +0.01 | +0.03 | +0.02 |
-| Scaling Contribution       | Jailbreakbench     | −0.01 | +0.00 | −0.01 | +0.00 | +0.00 | +0.00 |
-| Undifferentiated Attention | Malicious Instruct | +0.66 | +0.28 | +0.33 | +0.48 | +0.56 | +0.46 |
-| Undifferentiated Attention | Jailbreakbench     | +0.62 | +0.46 | +0.39 | +0.52 | +0.52 | +0.50 |
-| Scaling Contribution       | Malicious Instruct | +0.07 | +0.20 | +0.32 | +0.24 | +0.28 | +0.22 |
-| Scaling Contribution       | Jailbreakbench     | +0.03 | +0.18 | +0.41 | +0.45 | +0.44 | +0.30 |
+![alt text](/assets/img/posts/Ships_Sahara/1_table.png)
 
 이를 위해 수식 (8)로 표현되는 Undifferentiated Attention, 그리고 수식 (9)로 표현되는 Scaling Contribution의 영향을 표로 정리하면 위와 같다.
 
-표의 위쪽 4행은 `Sahara`를 사용하여 ASR을 높인 상태이고, 아래 4행은 **특정 harmful query**의 효과에 집중한다.
+표 위쪽은 `Sahara`에 기반한 실험, 아래쪽은 **특정 harmful query**의 효과에 집중한다.
 
-실험 결과를 해석해보면, **<span style='color: #6a5acd'>Undifferentiated Attenton은 확연하게 safety capability를 줄인다.</span>**
+실험 결과를 해석해보면, **Undifferentiated Attenton은 확연하게 safety capability를 줄인다.**
 
 반대로, Scaling Contribution에서의 결과는 dataset 수준에서는 효과가 미미한 것에 비해, 특정 harmful query에서의 결과는 확연한 것을 보여준다.
 
-이러한 결과는 attention 기반 safety가 단순한 정보 전달이 아닌, 입력에서 중요한 정보를 선택적으로 추출하는 과정에서 형성된다는 점을 시사한다.
+이러한 결과는 **<span style='color: #6a5acd'>attention 기반 safety가 단순한 정보 전달이 아닌, 입력에서 중요한 정보를 선택적으로 추출하는 과정에서 형성된다는 점을 시사</span>**한다.
 
 특히, 평균적인 attention 분포는 malicious feature를 제대로 포착하지 못해 오탐(false positive)을 유발할 수 있다.
 
@@ -456,17 +464,11 @@ Section 3.1에서 LLM safety capability에 영향을 주는 Undifferentiated Att
 
 ### Attention Weight and Attention Output Do Not Transfer
 
-![alt text](/assets/img/posts/Ships_Sahara/5_figure.png){: width=650}
-_그림 5) 일반화된 `Ships`를 사용하여 계산된 Safety 능력 상위 10개_
+![alt text](/assets/img/posts/Ships_Sahara/5a_figure.png){: width="350"}
+_그림 5(a)) 같은 benchmark에서 일반화된 `Ships`를 사용하여 계산된 Safety 능력 상위 10개_
+
 
 그림 5(a)에서 보이는 것처럼, `Ships` 점수가 높은 상위 10개 safety head를 비교해봤을 때, 겹치는 지점이 별로 없고, Undifferentiated Attention으로 식별된 head가 Scaling Contribution으로 식별된 head보다 일관성이 있었다.
-
-이를 통해,
-
-1. **서로 다른 attention head가 safety에 서로 다른 영향을 미칠**뿐만 아니라,
-2. **<span style='color: #6a5acd'>Undifferentiated Attention으로 식별된 head가 중요한 정보를 추출하는 데 핵심적</span>**이다.
-
-라는 것을 알 수 있다.
 
 ## 5.2 Pre-training is Important for LLM Safety
 
@@ -474,11 +476,14 @@ _그림 5) 일반화된 `Ships`를 사용하여 계산된 Safety 능력 상위 1
 
 Section 5.2에서는 이전 연구들에서 언급했던, LLM Safety에 대해서 model의 alignment 과정도 중요하지만, base model 자체의 역할도 중요하다는 점에 대해서 실험을 진행한다.
 
+![alt text](/assets/img/posts/Ships_Sahara/5b_figure.png){: width="350"}
+_그림 5(b)) 같은 ablation에서 일반화된 `Ships`를 사용하여 계산된 Safety 능력 상위 10개_
+
 그림 5(b)를 통해서 어떤 ablation 방법을 사용하든 두 model 간의 safety head가 많이 겹친다는 것을 알 수 있다.
 
 이는 **<span style='color: #6a5acd'>model의 pre-training 과정이 safety capability 형성에 큰 영향을 미친다는 점을 시사</span>**한다.
 
-![](/assets/img/posts/Ships_Sahara/6_figure.png){: width=650}
+![](/assets/img/posts/Ships_Sahara/6_figure.png){: width="650"}
 _그림 6) safety parameter/attention head에 대한 고찰_
 
 attention head와 pre-training 단계의 safety에 있어 상관 관계를 알아보기 위해, 본 실험에서는 attention parameter를 pre-training 단계의 base model에서 가져오고, 나머지 parameter는 aligned된 model의 값을 유지한 혼합 모델을 구성하였다.
