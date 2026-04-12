@@ -31,7 +31,7 @@ _그림 1) On the Role of Attention Heads in Large Language Models Safety_
 
 그러던 중, **<span style='color: #6a5acd'>Mechanistic Interpretation</span>**이라는 개념이 등장했는데, 이는 인공지능 모델의 feature, neuron, layer, parameter 분석으로 해당 모델의 행동과 능력을 이해하려는 연구 분야를 의미한다.
 
-해당 연구 분야가 논문을 보다 보니 굉장히 흥미로웠는데, Anthropic에서 관련된 논문을 2021년에 냈었던 걸 알 수 있었다([A Mathematical Framework for Transformer Circuits](https://www.anthropic.com/research/a-mathematical-framework-for-transformer-circuits)). 읽어보고 다른 포스팅에서 다뤄보려고 한다.
+해당 연구 분야가 논문을 보다 보니 굉장히 흥미로웠는데, Anthropic에서 관련된 논문을 2021년에 냈었던 걸 알 수 있었다([A Mathematical Framework for Transformer Circuits](https://www.anthropic.com/research/a-mathematical-framework-for-transformer-circuits)). 읽어보고 다음 포스팅에서 다뤄보려고 한다.
 
 이와 같은 연구 분야가 생겨나다보니, 보안 분야에서도 자연스럽게 Mutli-Head Attention에서 안전성 능력(Safety Capability)는 어떨지에 대해 의문을 갖게 되어 연구한 논문이 바로 이 논문이라고 생각된다.
 
@@ -319,7 +319,7 @@ $$
 만약 입력 데이터셋이 harmful할 경우, $U$는 harmful query 전체에 공통적으로 나타나는 safety-related representation 구조를 나타내게 된다.
 
 Safety Capability를 가지는 attention head를 특정하기 위해서 두 가지 Matrix를 비교한다.
-- $U_\theta \in \mathbb{R}^{|Q_\mathcal{H}| \times d_k}$: Aligned model에서의 representation
+- $U_\theta \in \mathbb{R}^{\lvert Q_\mathcal{H} \rvert \times d_k}$: Aligned model에서의 representation
 - $U_\mathcal{A}$: 특정 attention head를 ablation한 model에서의 representation
 
 Ablation의 영향력을 정량화하기 위해서, $U_\theta$와 $U_\mathcal{A}$ 사이의 principle angle을 계산한다.
@@ -334,7 +334,7 @@ $$
 
 이때 앞쪽 $r$개 차원은 SVD에서 가장 중요한 feature를 포함하고, 본 연구에서는 이에 주목한다.
 
-![alt text](/assets/img/posts/Ships_Sahara/3_figure.png){: width="200" }
+![alt text](/assets/img/posts/Ships_Sahara/3_figure.png){: width="350" }
 _그림 3) 일반화된 `Ships` 표현_
 
 $\sigma_r$은 $r$번째 특이값(singular value)를 의미하고, $\phi_r$은 $U_\theta^{(r)}$과 $U_\mathcal{A}^{(r)}$ 사이의 principle angle을 의미한다.
