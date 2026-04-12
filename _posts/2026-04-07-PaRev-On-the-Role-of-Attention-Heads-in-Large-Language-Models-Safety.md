@@ -12,9 +12,9 @@ tags: [AI, Safety, Attention, LLM, Interpretation]
 
 이번에 리뷰해볼 논문은 Attention Head에 Safety Capability가 내재되어있음을 보이고, 이를 통해 LLM Safety에 대하여 연구한 논문이다.
 
-> **ICLR 2025**
-> On the Role of Attention Heads in Large Language Models Safety
-> Zhenhond Zhou et al., Tongyi Lab, USTC, Tsinghua Univeristy, Nanyan Tech. Univeristy
+> **[ ICLR 2025 ]**
+> [On the Role of Attention Heads in Large Language Models Safety](https://arxiv.org/abs/2410.13708)<br>
+> Zhenhong Zhou et al., Tongyi Lab, USTC, Tsinghua Univeristy, Nanyan Tech. Univeristy
 
 ---
 
@@ -115,7 +115,7 @@ Safety Parameter란, 이들이 수정되면 LLM의 Safety 관련 가드레일이
 
 $$
 \begin{align}
-\Theta_{\mathcal{S}, K} &= \text{Top-K} \big\{ \theta_\mathcal{S} : \argmax_{\theta_\mathcal{C} \in \theta_\mathcal{O}} \;\; \Delta p(\theta_\mathcal{C}) \big\}, \\
+\Theta_{\mathcal{S}, K} &= \text{Top-K} \big\{ \theta_\mathcal{S} : \operatorname*{arg\,max}_{\theta_\mathcal{C} \in \theta_\mathcal{O}} \; \Delta p(\theta_\mathcal{C}) \big\}, \\
 \Delta p(\theta_\mathcal{C}) &= \mathbb{D}_\text{KL} \big( \; p (R_\perp \; | \; x_\mathcal{H} ; \theta_\mathcal{O} ) \; \| \; p ( R_\perp \; | \; x_\mathcal{H} ; (\theta_\mathcal{O} \backslash \theta_\mathcal{C})) \big)
 \end{align}
 $$
@@ -317,7 +317,7 @@ $$
 만약 입력 데이터셋이 harmful할 경우, $U$는 harmful query 전체에 공통적으로 나타나는 safety-related representation 구조를 나타내게 된다.
 
 Safety Capability를 가지는 attention head를 특정하기 위해서 두 가지 Matrix를 비교한다.
-- $U_\theta$: Aligned model에서의 representation $(U_\theta \in \mathbb{R}^{|Q_\mathcal{H}| \times d_k})$
+- $U_\theta \in \mathbb{R}^{|Q_\mathcal{H}| \times d_k}$: Aligned model에서의 representation
 - $U_\mathcal{A}$: 특정 attention head를 ablation한 model에서의 representation
 
 Ablation의 영향력을 정량화하기 위해서, $U_\theta$와 $U_\mathcal{A}$ 사이의 principle angle을 계산한다.
