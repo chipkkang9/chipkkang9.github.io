@@ -108,7 +108,7 @@ Conference on Information Security and Cryptography (Winter 2022)
 ## Additional Experience
 
 **Best of the Best 11th Security Consulting Track Trainee** (2022–2023)  
-- Top 100, Advanced Education Certified  
+- Advanced Education Certified  
 
 **Republic of Korea Army** (2024–2025)  
 - Signal Intelligence Specialist  
