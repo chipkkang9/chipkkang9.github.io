@@ -14,7 +14,7 @@ tags: [AI, Safety, Attention, LLM, Interpretation]
 
 > **[ ICLR 2025 ]**
 > [On the Role of Attention Heads in Large Language Models Safety](https://arxiv.org/abs/2410.13708)<br>
-> Zhenhong Zhou et al., Tongyi Lab, USTC, Tsinghua Univeristy, Nanyan Tech. Univeristy
+> Zhenhong Zhou et al., Tongyi Lab, USTC, Tsinghua Univeristy, Nanyang Tech. Univeristy
 
 ---
 
@@ -30,6 +30,8 @@ _그림 1) On the Role of Attention Heads in Large Language Models Safety_
 이에 따라, LLM에 대한 안전하고 윤리적인 개발을 위해 LLM의 내부 동작을 이해하는 것이 중요하다.
 
 그러던 중, **<span style='color: #6a5acd'>Mechanistic Interpretation</span>**이라는 개념이 등장했는데, 이는 인공지능 모델의 feature, neuron, layer, parameter 분석으로 해당 모델의 행동과 능력을 이해하려는 연구 분야를 의미한다.
+
+해당 연구 분야가 논문을 보다 보니 굉장히 흥미로웠는데, Anthropic에서 관련된 논문을 2021년에 냈었던 걸 알 수 있었다([A Mathematical Framework for Transformer Circuits](https://www.anthropic.com/research/a-mathematical-framework-for-transformer-circuits)). 읽어보고 다른 포스팅에서 다뤄보려고 한다.
 
 이와 같은 연구 분야가 생겨나다보니, 보안 분야에서도 자연스럽게 Mutli-Head Attention에서 안전성 능력(Safety Capability)는 어떨지에 대해 의문을 갖게 되어 연구한 논문이 바로 이 논문이라고 생각된다.
 
