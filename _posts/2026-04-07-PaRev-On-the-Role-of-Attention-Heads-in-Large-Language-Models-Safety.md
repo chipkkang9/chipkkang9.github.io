@@ -19,6 +19,7 @@ tags: [AI, Safety, Attention, LLM, Interpretation]
 ---
 
 # 1. Introduction
+
 ![](/assets/img/posts/Ships_Sahara/1_figure.png){: width=650}
 _그림 1) On the Role of Attention Heads in Large Language Models Safety_
 
