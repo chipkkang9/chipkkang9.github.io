@@ -8,10 +8,8 @@ categories: [Paper Review]
 tags: [AI, Safety, Attention, LLM, Interpretation]
 image:
   path: /assets/img/posts/Ships_Sahara/thumbnail.png
-  alt: "thumbnail"
+  alt: "[ICLR 2025] On the Role of Attention Heads in Large Language Model Safety"
 ---
-
-![](/assets/img/posts/Ships_Sahara/paper_title.png){: width=650}
 
 이번에 리뷰해볼 논문은 Attention Head에 Safety Capability가 내재되어있음을 보이고, 이를 통해 LLM Safety에 대하여 연구한 논문이다.
 
