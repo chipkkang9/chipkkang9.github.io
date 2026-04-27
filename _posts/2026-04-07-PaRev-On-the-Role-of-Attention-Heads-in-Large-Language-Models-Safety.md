@@ -6,6 +6,9 @@ date: 2026-04-07 00:00:00 +09:00
 math: true
 categories: [Paper Review]
 tags: [AI, Safety, Attention, LLM, Interpretation]
+image:
+  path: /assets/img/posts/Ships_Sahara/thumbnail.png
+  alt: "thumbnail"
 ---
 
 ![](/assets/img/posts/Ships_Sahara/paper_title.png){: width=650}
