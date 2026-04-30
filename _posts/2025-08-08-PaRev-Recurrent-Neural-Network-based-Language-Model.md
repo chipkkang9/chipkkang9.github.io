@@ -41,8 +41,6 @@ As mentioned in the abstract, the background of RNN's emergence is to overcome t
 
 A language model like N-gram, which **calculates the probability of a specific word by looking at surrounding words, is called a "Statistical Language Model (SLM)."**
 
-<br>
-
 ## 📊 Statistical Language Model
 Before understanding RNN-based language models, **Statistical Language Models (SLM)** were used. An SLM refers to a model that predicts words based on the Markov Assumption.
 
@@ -53,8 +51,6 @@ $$
 P(S_t|S_{t-1}, S_{t-2}, ... , S_1) = P(S_t | S_{t-1})
 $$
 
-<br>
-
 ### 💀 Limitations of SLM
 
 Predicting the next word based on N previous words is called an **N-gram language model**. For example, an N-gram model based on 2 words is called a bigram, and 3 words a trigram.
@@ -64,8 +60,6 @@ The number of previous words (N) examined to predict a single word is called a '
 Conversely, if N is large, accuracy increases relatively, but the time for word prediction becomes longer. As the training data (Corpus) grows, the opportunity cost increases, a problem known as the **'Sparsity Problem'**.
 
 Therefore, the **Trade-off process** of determining a value for N that is neither too large nor too small is very important. Generally, in academia, it is known that it is good to maximize the size of N but not exceed 5.
-
-<br>
 
 ### 👼 Overcoming Limitations
 
@@ -80,7 +74,6 @@ Using RNN (Recurrent Neural Network) can overcome the limitations of existing mo
 
 ---
 
-
 # 📜 2. Model Description
 
 ## ✖️ Understanding with MathLines!
@@ -93,8 +86,6 @@ $$
 x(t) = w(t) + s(t-1)
 $$
 
-<br>
-
 The hidden layer (context/hidden layer) plays a role in remembering past information. It is determined by summing the results of multiplying the input layer values calculated above by weights. This value is **reused when calculating the output layer** and **when determining the input layer for the next time step**.
 
 At this time, the activation function $f(z)$ uses the **sigmoid function**.
@@ -103,7 +94,6 @@ $$
 s_j(t) = f \left( \sum_i x_i (t) u_{ji} \right)  \; \text{where,} \; f(z) = \frac{1}{1+e^{-z}}
 $$
 
-<br>
 
 Once the hidden layer calculation is complete, the output layer is derived based on the results of the hidden layer.
 
@@ -115,8 +105,6 @@ $$
 
 Additionally, the **Cross-Entropy function is used as the Loss function** in the process of training the RNNLM Network.
 
-<br>
-
 ## 🌇 Understanding with Pictures!
 
 ![RNNLM Diagram](/assets/img/posts/RNNLM/RNNLM%20Diagram.png)
@@ -125,8 +113,6 @@ The picture above shows the structure of RNNLM explained in the paper.
 
 > 💡 **SLM vs RNNLM**
 Compared to models that predict words by looking at words of a certain length (e.g., N-gram), the concept of processing by looking at **context** was born.
-
-<br>
 
 ### 📚 Network Learning
 The network is trained using **backpropagation and stochastic gradient descent**.
@@ -140,8 +126,6 @@ The network is trained using **backpropagation and stochastic gradient descent**
     - Calculates gradients and updates parameters using one or a few training samples.
     - Contributes to reducing costs for calculation and non-linear optimization.
 
-<br>
-
 ### 🧨 Dynamic Model
 While typical models do not update weights during the testing phase, a Dynamic model continues learning even while processing test data. This allows it to automatically adapt to new words or domains, producing an effect similar to a cache.
 
@@ -150,7 +134,6 @@ While typical models do not update weights during the testing phase, a Dynamic m
 - **Dynamic Model:** Learned online; data is continuously input into the system and integrated into the model through these updates.
 
 ---
-
 
 # 🔭 3-4. Experiment (WSJ, NIST RT05)
 As a result of speech recognition experiments with the Wall Street Journal (WSJ) and NIST RT05 meetings:
@@ -170,8 +153,6 @@ RNNLM showed a larger performance improvement as the training data increased com
     a. Emergence of the Dynamic Model
     b. Designed to adapt to real-time information and fit the concept of Learning
 
-<br>
-
 ## 📑 Future Work
 
 ### 🧐 What's NEXT?
@@ -187,12 +168,12 @@ RNNLM showed a larger performance improvement as the training data increased com
 - **Long-Term Dependency Problem**
    - The author is impressive for clearly identifying the limitations of his own model.
    - Mentioned that Vanilla (Simple) RNN cannot include information from long contexts.
-   - <u>**Triggered the emergence of models like LSTM and GRU.**</u>
+   - **<span style='color: #6a5acd'>Triggered the emergence of models like LSTM and GRU.</span>**
 
 - **High Computational Cost**
     - RNNLM requires much more time and computational resources compared to N-gram.
     - Representatively, the composition of Word Vectors consists of one-hot encoding, causing spatial problems!
-    - <u>**Triggered the emergence of Word2Vec.**</u>
+    - **<span style='color: #6a5acd'>Triggered the emergence of Word2Vec.</span>**
 
 ---
 
