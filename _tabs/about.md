@@ -10,7 +10,7 @@ order: 4
 Cyber Security undergraduate at Ajou University, Republic of Korea.  
 I study AI Security with a focus on safe and robust behavior of language models and vision-language models.
 
-[GitHub](https://github.com/chipkkang9) | [LinkedIn](https://www.linkedin.com/in/sanghyeon-park-81659b251) | [Email](mailto:chipkkang9@gmail.com)
+[GitHub](https://github.com/chipkkang9) &middot; [LinkedIn](https://www.linkedin.com/in/sanghyeon-park-81659b251) &middot; [Email](mailto:chipkkang9@gmail.com)
 
 ---
 
