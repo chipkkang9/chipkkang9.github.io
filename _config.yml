@@ -16,10 +16,10 @@ timezone: Asia/Seoul
 
 title: C2SR Lab. # the main title
 
-tagline: Chipkkang9's Cyber Security Reserach Lab. # it will display as the subtitle
+tagline: Chipkkang9's AI Security Research Lab. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Tiny and Cozy, but Professional Security Research Laboratory of chipkkang9(a.k.a. Sanghyeon Park)!
+  AI security research portfolio and technical blog of chipkkang9, a.k.a. SangHyeon Park.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.

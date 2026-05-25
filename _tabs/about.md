@@ -4,129 +4,144 @@ title: about
 icon: fas fa-user
 order: 4
 ---
-# Park Sang Hyeon
 
-📧 chipkkang9@gmail.com  
-📱 +82 10-5882-7880  
-🔗 https://linkedin.com/in/sanghyeon-park-81659b251  
+# SangHyeon Park
 
----
+Cyber Security undergraduate at Ajou University, Republic of Korea.  
+I study AI Security with a focus on safe and robust behavior of language models and vision-language models.
 
-## Research Interests
-- AI Security (Security for AI, AI for Security)
-- Data Privacy and Management
+[GitHub](https://github.com/chipkkang9) | [LinkedIn](https://www.linkedin.com/in/sanghyeon-park-81659b251) | [Email](mailto:chipkkang9@gmail.com)
 
 ---
 
-## Education
-**B.S. in Cyber Security, Ajou University, Republic of Korea**  
-GPA: 3.89 / 4.50 (2021 – 2027)
+## Research Direction
+
+My current work sits between **Security for AI** and **AI for Security**.
+
+| Area | Current questions |
+| --- | --- |
+| VLM and LLM safety | How can harmful behaviors, refusal behavior, and safety capability be controlled or interpreted inside modern models? |
+| Mechanistic interpretability | Which internal components, such as attention heads and activations, contribute to safe or unsafe responses? |
+| Adversarial robustness | How can we find and reduce model failure modes caused by adversarial examples, jailbreaks, and misuse-oriented inputs? |
+| AI for vulnerability discovery | How can LLMs improve fuzzing, cyber threat simulation, and automated security analysis? |
+| Privacy and misuse prevention | How can AI systems be designed to reduce data leakage and deepfake misuse risk? |
+
+---
+
+## Featured Work
+
+### VLM-CAST: Conditional Activation Steering for Safe Response Control
+
+Research project on safe response control in vision-language models. The project explores activation-level steering, refusal behavior, and robustness-oriented evaluation for multimodal AI systems.
+
+- Domain: VLM safety, activation steering, adversarial robustness
+- Current status: private research project, public release planned
+- Related study: attention-head safety, mechanistic interpretability, LLM safety papers
+
+### VXShield: Lightweight Voice Protection Against Deepfake Audio Generation
+
+[VXShield](https://github.com/chipkkang9/VXShield) is a proactive defense system that adds imperceptible perturbations to Korean speech so that later zero-shot voice-cloning attempts degrade.
+
+- Role: AI security research and implementation
+- Core methods: PGD-based perturbation, speaker-encoder attack surface, perceptual and semantic quality evaluation
+- Stack: PyTorch, FastAPI, CAM++, WavLM, ECAPA-TDNN, Whisper, Zeroth-Korean
+
+### LLM-based Fuzzing
+
+Project and seminar work on using large language models for software testing and vulnerability discovery.
+
+- Reviewed recent LLM-based fuzzing research and built a topic map around LLMs, fuzzing, and generated test cases
+- Connected previous firmware/security experience with modern AI-assisted vulnerability discovery
+- Presented the topic in a student security seminar
+
+### AI-based Cyber Threat Intelligence Profiling
+
+Research project on using AI agents for cyber threat intelligence profiling and cyberpower-related information modeling.
+
+- Role: AI agent developer
+- Output: related conference paper in 2025
+
+### Cyber Threat Simulation Automation
+
+Research project around LLM-assisted cyber threat simulation and BAS-style automation.
+
+- Role: Blue Team technical analyst
+- Output: related conference paper in 2025
+
+### UEFI Exploitation Fuzzer
+
+Firmware security project from the Best of the Best program period.
+
+- Role: project manager
+- Output: one paper and two assigned CVEs
+- CVEs: CVE-2023-30738, CVE-2023-27471
 
 ---
 
 ## Publications
 
-**CA-BAS: PoC-Generative BAS Framework based on LLM**  
-Autumn Annual Conference of IEIE, 2025  
-(Gwangju, Republic of Korea, Nov 28–29, 2025)
+- **CA-BAS: PoC-Generative BAS Framework based on LLM**  
+  Autumn Annual Conference of IEIE, 2025, Gwangju, Republic of Korea
 
-**User Information-based Cyberpower Related LLM Model**  
-Autumn Annual Conference of IEIE, 2025  
-(Gwangju, Republic of Korea, Nov 28–29, 2025)
+- **User Information-based Cyberpower Related LLM Model**  
+  Autumn Annual Conference of IEIE, 2025, Gwangju, Republic of Korea
 
-**Cyber Threat Response in DeFi: Volatility-based Approach for RugPull Detection**  
-17th KIPS International Conference on Ubiquitous Information Technology and Applications  
-(Nha Trang, Vietnam, Dec 18–20, 2023)
+- **Cyber Threat Response in DeFi: Volatility-based Approach for RugPull Detection**  
+  17th KIPS International Conference on Ubiquitous Information Technology and Applications, 2023, Nha Trang, Vietnam
 
-**RugPull Detection Method based on Volatility in DeFi**  
-Conference on Information Security and Cryptography (Winter 2023)  
-(Ewha Womans University, Republic of Korea, Dec 2, 2023)
+- **RugPull Detection Method based on Volatility in DeFi**  
+  Conference on Information Security and Cryptography, Winter 2023, Seoul, Republic of Korea
 
-**Digital Healthcare Attack Scenario based on DeFi Security Vulnerability**  
-Annual Conference of KIPS 2023  
-(Pukyong National University, Republic of Korea, Nov 2–4, 2023)
+- **Digital Healthcare Attack Scenario based on DeFi Security Vulnerability**  
+  Annual Conference of KIPS, 2023, Busan, Republic of Korea
 
-**Security Threat Trend based on Drone Embedded System and Network Protocol**  
-Annual Spring Conference of KIPS  
-(Seoul National University, Republic of Korea, May 18–20, 2023)
+- **Security Threat Trend based on Drone Embedded System and Network Protocol**  
+  Annual Spring Conference of KIPS, 2023, Seoul, Republic of Korea
 
-**The Trend of UEFI Firmware Security**  
-Conference on Information Security and Cryptography (Winter 2022)  
-(Kookmin University, Republic of Korea, Nov 26, 2022)
+- **The Trend of UEFI Firmware Security**  
+  Conference on Information Security and Cryptography, Winter 2022, Seoul, Republic of Korea
 
 ---
 
-## Projects
+## Selected Writing
 
-**Cyber Threat Simulation Automation** (Sep 2025 – Dec 2025)  
-- Blue Team technical analyst  
-- 1 paper assigned  
-
-**AI-based Cyber Threat Intelligence Profiling** (Sep 2025 – Dec 2025)  
-- AI agent developer  
-- 1 paper assigned  
-
-**LLM-based Fuzzing** (Jul 2025 – Aug 2025)  
-- Project Manager  
-- Presented at student club joint seminar (Sejong)  
-
-**UEFI Exploitation Fuzzer** (Jul 2022 – Jan 2023)  
-- Project Manager  
-- 1 paper assigned  
-- 2 CVEs assigned  
-  - CVE-2023-30738 (Impact: 7.8)  
-  - CVE-2023-27471 (Impact: 5.5)  
+- [On the Role of Attention Heads in Large Language Models Safety](https://chipkkang9.github.io/posts/PaRev-On-the-Role-of-Attention-Heads-in-Large-Language-Models-Safety/)
+- [Large Language Model Based Fuzzing Techniques: A Survey](https://chipkkang9.github.io/posts/PaRev-Large-Language-Model-Based-Fuzzing-Techniques_A-Survey/)
+- [Several Transformer Models](https://chipkkang9.github.io/posts/cAIRev-Several-Transformer-Models/)
+- [Recurrent Neural Network based Language Model](https://chipkkang9.github.io/posts/PaRev-Recurrent-Neural-Network-based-Language-Model/)
+- [CCE 2025 PaperLibrary Write-up](https://chipkkang9.github.io/posts/cce2025-paperlibrary-writeup/)
 
 ---
 
 ## Experience
 
-**Whois – Information Security Student Club** (2021 – Present)
+### Ajou University
 
-**Education**
-- Attack the Web Hacking Wargames (2025)
-- Web Hacking: Basic to Intermediate (2022–2023)
-- C Language Programming (2022–2023)
+**B.S. in Cyber Security**, 2021-2027  
+GPA: 3.89 / 4.50
 
-**Study**
-- Learning AI: NLP to Vision Overview (2025)
-- Capture the Flag Team (2022–2023)
-- Basic Web Developing (2021)
+### Whois, Information Security Student Club
 
-**Seminar**
-- Road to LLM-based Fuzzing (2025)
-- What is Security Consulting? (2023)
-- About UEFI Exploitation (2022)
+- President, 2025
+- Vice President, 2023
+- Financial Manager, 2022
+- Led or contributed to education, study groups, CTF activity, and security seminars
 
-**Roles**
-- President (2025)
-- Vice President (2023)
-- Financial Manager (2022)
+### KITRI Best of the Best 11th
 
----
+Security Consulting Track trainee, 2022-2023
 
-## Additional Experience
+- Completed advanced education
+- Worked on UEFI exploitation and firmware security
 
-**Best of the Best 11th Security Consulting Track Trainee** (2022–2023)  
-- Advanced Education Certified  
+### Republic of Korea Army
 
-**Republic of Korea Army** (2024–2025)  
-- Signal Intelligence Specialist  
+Signal Intelligence Specialist, 2024-2025
 
 ---
 
-## Skills
+## Technical Keywords
 
-**Language**
-- English (TOEFL iBT 84)
-- Japanese  
-
-**Communication**
-- Presentation
-- Team Management
-- Security Consulting  
-
-**Computer Science**
-- Computer Architecture
-- Algorithms
-- Cyber Security
+`AI Security` `VLM Safety` `LLM Safety` `Mechanistic Interpretability` `Activation Steering`  
+`Adversarial Robustness` `LLM Fuzzing` `Prompt Injection` `Cyber Threat Intelligence`  
+`UEFI Security` `DeFi Security` `Privacy-Preserving AI`
