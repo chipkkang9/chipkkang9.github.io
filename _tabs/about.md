@@ -125,7 +125,21 @@ GPA: 3.89 / 4.50
 - President, 2025
 - Vice President, 2023
 - Financial Manager, 2022
-- Led or contributed to education, study groups, CTF activity, and security seminars
+
+**Education**
+- Attack the Web Hacking Wargames, 2025
+- Web Hacking: Basic to Intermediate, 2022-2023
+- C Language Programming, 2022-2023
+
+**Study**
+- Learning AI: NLP to Vision Overview, 2025
+- Capture the Flag Team, 2022-2023
+- Basic Web Developing, 2021
+
+**Seminar**
+- Road to LLM-based Fuzzing, 2025
+- What is Security Consulting?, 2023
+- About UEFI Exploitation, 2022
 
 ### KITRI Best of the Best 11th
 
@@ -140,8 +154,26 @@ Signal Intelligence Specialist, 2024-2025
 
 ---
 
+## Skills
+
+**Language**
+- English, TOEFL iBT 84
+- Japanese
+
+**Communication**
+- Presentation
+- Team management
+- Security consulting
+
+**Computer Science**
+- Computer architecture
+- Algorithms
+- Cyber security
+
+---
+
 ## Technical Keywords
 
 `AI Security` `VLM Safety` `LLM Safety` `Mechanistic Interpretability` `Activation Steering`  
 `Adversarial Robustness` `LLM Fuzzing` `Prompt Injection` `Cyber Threat Intelligence`  
-`UEFI Security` `DeFi Security` `Privacy-Preserving AI`
+`UEFI Security` `DeFi Security` `Data Privacy and Management` `Privacy-Preserving AI`
