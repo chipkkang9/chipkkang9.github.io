@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[NetSec] Understanding TLS, PKI, and the Post-Quantum Transition'
-description: An amateur analysis of two TLS sessions, from cipher suites and certificate chains to Kyber/ML-KEM migratio(ENJOY!!).
+description: An amateur analysis of two TLS sessions, from cipher suites and certificate chains to Kyber/ML-KEM migration(ENJOY!!).
 date: 2026-06-08 00:00:00 +09:00
 math: true
 mermaid: true
