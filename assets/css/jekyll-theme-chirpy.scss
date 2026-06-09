@@ -9,3 +9,16 @@
 ';
 
 /* append your custom style below */
+
+.preview-img.w-wide-figure {
+  aspect-ratio: 3602 / 1241;
+  height: auto;
+}
+
+.preview-img.w-wide-figure > img,
+img.preview-img.w-wide-figure {
+  aspect-ratio: 3602 / 1241;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}

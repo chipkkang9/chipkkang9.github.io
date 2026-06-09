@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[PaRev] NDAD: Negative-Direction Aware Decoding'
+title: '[PaRev] NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection'
 description: A review of NDAD, a training-free decoding method that suppresses hallucination by constructing and subtracting controllable hallucination signals.
 date: 2026-05-08 00:00:00 +09:00
 math: true
@@ -13,7 +13,7 @@ image:
 
 On May 8, 2026, I reviewed **NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection**.
 
-> **[ICLR 2026]**
+> **[ ICLR 2026 ]**
 > [NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection](https://openreview.net/forum?id=fCZf20wK6p)<br>
 > Panjia Qiu, Mingyuan Fan, Cen Chen, Daixin Wang
 

@@ -12,7 +12,7 @@ image:
 
 On February 20, 2026, I reviewed **Programming Refusal with Conditional Activation Steering**.
 
-> **[ICLR 2025 Spotlight]**
+> **[ ICLR 2025 Spotlight ]**
 > [Programming Refusal with Conditional Activation Steering](https://proceedings.iclr.cc/paper_files/paper/2025/hash/e2dd53601de57c773343a7cdf09fae1c-Abstract-Conference.html)<br>
 > Bruce W. Lee, Inkit Padhi, Karthikeyan Natesan Ramamurthy, Erik Miehling, Pierre Dognin, Manish Nagireddy, Amit Dhurandhar<br>
 > University of Pennsylvania, IBM Research
