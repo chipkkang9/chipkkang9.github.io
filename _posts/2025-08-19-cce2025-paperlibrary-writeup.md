@@ -30,7 +30,7 @@ In this service, `PaperLibrary` service that provies paper searching engine was 
 
 Main source codes are below :
 
-### init.sql
+## init.sql
 
 ```sql
 -- Create database if not exists
@@ -83,7 +83,7 @@ In init.sql, we can notice the format of data in the database, through papers an
 
 <br>
 
-### mcp_server.py
+## mcp_server.py
 
 ```python
 import os

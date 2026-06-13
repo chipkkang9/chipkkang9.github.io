@@ -52,7 +52,7 @@ _그림 1) On the Role of Attention Heads in Large Language Models Safety_
 
 # 2. Preliminary
 
-### Large Language Models (LLM).
+## Large Language Models (LLM).
 
 현재 대부분의 LLM 모델은 decoder-only 구조에 대부분 기반하고, 입력에 대해 다음 결과를 예측하는 **<span style='color: #6a5acd'>'next token prediction'</span>** 방식을 사용한다.
 LLM의 동작을 수식으로 나타내면, 입력 시퀀스 $x = x_1, x_2, \dots, x_s$에 대해 LLM은 다음 토큰의 확률 분포를 반환할 수 있다.
@@ -67,7 +67,7 @@ $$
 이 확률 분포에서 sampling하면 새로운 토큰 $x_{n+1}$이 생성된다.
 이 과정을 반복하면 결과 $R = x_{s+1}, x_{s+2}, \dots, x_{s+R}$을 얻을 수 있다.
 
-### Multi-Head Attention (MHA).
+## Multi-Head Attention (MHA).
 
 ![alt text](/assets/img/posts/Ships_Sahara/Multi_head_attention.png){: width=200}
 _structure of Multi-Head Attention_
@@ -87,7 +87,7 @@ $$
 위 수식을 통해 Query, Key, Value 값에 기반하여 각 head의 결과를 합쳐서 하나의 출력으로 만든다. 
 즉, MHA는 어떤 데이터를 head의 개수에 따라 집중해서 보고(Attention), 그 정보를 추출해 합치는 역할을 수행한다.
 
-### LLM Safety and Jailbreak Attack.
+## LLM Safety and Jailbreak Attack.
 
 LLM Safety를 위해서 alignment되도록 학습된 LLM은 아래와 같은 수식으로 표현된다.
 $$
@@ -112,7 +112,7 @@ $$
 
 본 논문에서는 **<span style='color: #6a5acd'>"이 두 확률이 특정 attention head를 통해 조절할 수 있을 것이다!"</span>**를 보이고 싶은 것이다.
 
-### Safety Parameters.
+## Safety Parameters.
 
 Safety Parameter란, 이들이 수정되면 LLM의 Safety 관련 가드레일이 손상되어 비윤리적인 내용을 생성할 수 있는 parameter를 의미한다.
 수식적으로 이를 정의하면 아래와 같다.

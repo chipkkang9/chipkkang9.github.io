@@ -11,7 +11,7 @@ image:
   alt: "[INTERSPEECH 2010] Recurrent neural network based language model"
 ---
 
-###  During my military service, I met really great successors and studied LLM-related topics.
+**During my military service, I met really great successors and studied LLM-related topics.**
 Although I didn't read papers at the time to build a foundation since I had no knowledge of AI, my successors were so passionate that they even formed a study group in the military to understand LLM.
 (I have so much respect for them...)
 

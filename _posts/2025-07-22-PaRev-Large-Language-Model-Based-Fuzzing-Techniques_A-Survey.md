@@ -130,7 +130,7 @@ for Fuzzing Test performance improvement.
 In this paper, metrics for evaluating Fuzzing Test performance based on all technologies are summarized, and based on 14 core documents, models, benchmarks, test types, etc., are classified and discussed in Chapters 4 and 5.
 
 ## 💀 3.1 AI Software
-#### Q. How do developers use LLM for Fuzzing Test?
+### Q. How do developers use LLM for Fuzzing Test?
 In Fuzzing Test of AI-type software, different software has different test methods, and various defense methods exist for various attack methods.
 
 - [「_ParaFuzz: An Interpretability-Driven Technique for Detecting Poisoned Samples in NLP_」](https://proceedings.neurips.cc/paper_files/paper/2023/hash/d2b752ed4726286a4b488ae16e091d64-Abstract-Conference.html)
@@ -157,7 +157,7 @@ In Fuzzing Test of AI-type software, different software has different test metho
   - A technology developed after TitanFuzz, it analyzes code that triggered vulnerabilities to generate more complex and specific edge-case code.
   - While TitanFuzz directly generates/modifies code snippets, FuzzGPT works based on few-shot, zero-shot learning, and Fine-Tuning techniques.
 
-#### Prompt Engineering and Seed Mutation
+### Prompt Engineering and Seed Mutation
 Existing Mutation-based Fuzzers mainly focus on simple operations such as BitFlipping, arithmetic mutation, block-based mutation, and dictionary-based mutation.
 
 LLM-based Seed Mutation <u>utilizes context awareness and natural language processing capabilities to perform complex mutations such as rewriting code fragments, changing data structures, and simulating user interaction while maintaining the file format</u>.
@@ -172,7 +172,7 @@ In the ParaFuzz paper, to perform Mutation Operations, a Meta Prompt to solve th
 TitanFuzz generates a large amount of initial input data based on CodeX, masks part of it, and fills it with CodeGen to create various inputs. Specific Mutation methods include Parameter mutation, prefix/suffix mutation, Method mutation, etc.
 
 ## 📟 3.2 Non-AI Software
-#### Q. How do developers use LLM for Fuzzing Test?
+### Q. How do developers use LLM for Fuzzing Test?
 Fuzzing Test is also used for software where AI technology is not used.
 
 - [「_Fuzz4All: Universal Fuzzing with Large Language Models_」](https://dl.acm.org/doi/abs/10.1145/3597926.3598067)
@@ -200,7 +200,7 @@ Therefore, in Fuzz4All and WhiteFox, GPT-4 is used as an analysis LLM technology
 
 +) LLM developed by Google was applied to the OSS-Fuzz Fuzzing system and succeeded in improving project code coverage.
 
-#### Prompt Engineering and Seed Mutation
+### Prompt Engineering and Seed Mutation
 Prompt Engineering and Seed Mutation are still important in Fuzzing Test for non-AI software using LLM, but there are some differences from traditional Fuzzing Test approaches.
 
 - **Fuzz4All**
@@ -217,7 +217,7 @@ _LLMs-based Fuzzer VS Traditional Fuzzer compared in the paper_
 
 Compared to traditional Fuzzers, LLM-based Fuzzers have the following advantages:
 
-#### Higher API & Code Coverage:
+### Higher API & Code Coverage:
 - TitanFuzz showed 91.11% and 24.09% improved API Coverage in TensorFlow and PyTorch, respectively (compared to the Fuzzers below):
 - FreeFuzz (Wei et al., 2022)
 - DeepREL (Deng et al., 2022)
@@ -228,7 +228,7 @@ Compared to traditional Fuzzers, LLM-based Fuzzers have the following advantages
 - AFLNET (Pham et al., 2020)
 - NSFuzz (Qin et al., 2023)
 
-#### Generate more efficient Programs:
+### Generate more efficient Programs:
 In terms of overall code, TitanFuzz achieved code coverage of 39.97% and 20.98% in TensorFlow and PyTorch, exceeding DeepREL and Muffin.
 
 TitanFuzz **has more time cost**, but by using only the seed generation function, testing for APIs covered by DeepREL is superior to DeepREL and takes less time, which is an advantage of directly using LLM to generate high-quality seeds.
@@ -237,7 +237,7 @@ TitanFuzz **has more time cost**, but by using only the seed generation function
 > Compared to simple Mutation-based Fuzzing, LLM-based Fuzzing will have heavy Time Cost in many aspects. How can this be solved?
 > It might be solved by using only the seed generation function like TitanFuzz, but is this method consistent with the purpose of LLM-based Fuzzing?
 
-#### Found more complex errors:
+### Found more complex errors:
 **❗️Problem of Traditional Fuzzer:** It does not understand code structure or logic as it derives Randomly Generated Test Cases. Therefore, it has low efficiency in identifying advanced vulnerabilities or program patterns.
 
 **✅ Advantage of LLM-based Fuzzer:** It has a strength in finding new and complex vulnerabilities by learning past bug data.
@@ -246,7 +246,7 @@ ex1. FuzzGPT found a total of 76 bugs, 61 were confirmed, 49 were undiscovered b
 
 ex2. When comparing CHATAFL (LLM-based) and NSFUZZ, AFLNET (Traditional), **within the same number of executions and time, CHATAFL found 9 new vulnerabilities while NSFUZZ found 4 and AFLNET found 3**.
 
-#### Increased Automation:
+### Increased Automation:
 Traditional Fuzzers mainly require manual work and cost, but **LLM-based Fuzzers automate Seed generation and Mutation, saving Testing Cost and time**.
 
 ---
